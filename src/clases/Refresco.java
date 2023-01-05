@@ -1,48 +1,56 @@
 package clases;
 
 public class Refresco {
- private String sabor;
- private boolean zumo;
- private int cantidadAzucar;
-public Refresco(String sabor, boolean zumo, int cantidadAzucar) {
-	super();
-	this.sabor = sabor;
-	this.zumo = zumo;
-	this.cantidadAzucar = cantidadAzucar;
-}
+	private String sabor;
+	private boolean zumo;
+	private int cantidadAzucar;
 
-public Refresco() {
-	
-}
+	public Refresco(String sabor, boolean zumo, int cantidadAzucar) {
+		super();
+		this.sabor = sabor;
+		this.zumo = zumo;
+		this.cantidadAzucar = cantidadAzucar;
+	}
 
-public String getSabor() {
-	return sabor;
-}
+	public Refresco() {
 
-public void setSabor(String sabor) {
-	this.sabor = sabor;
-}
+	}
 
-public boolean getZumo() {
-	return zumo;
-}
+	public String getSabor() {
+		return sabor;
+	}
 
-public void setZumo(boolean zumo) {
-	this.zumo = zumo;
-}
+	public void setSabor(String sabor) {
+		this.sabor = sabor;
+	}
 
-public int getCantidadAzucar() {
-	return cantidadAzucar;
-}
+	public boolean getZumo() {
+		return zumo;
+	}
 
-public void setCantidadAzucar(int cantidadAzucar) {
-	this.cantidadAzucar = cantidadAzucar;
-}
+	public void setZumo(boolean zumo) {
+		this.zumo = zumo;
+	}
 
-public void visualizarPropiedades(Refresco refresco) {
-System.out.println(" Sabor: " +this.getSabor() + " Zumo: "+this.getZumo() +
-" Cantidad azucar" + this.getCantidadAzucar());
-}
+	public int getCantidadAzucar() {
+		return cantidadAzucar;
+	}
 
- 
+	public void setCantidadAzucar(int cantidadAzucar) {
+		this.cantidadAzucar = cantidadAzucar;
+	}
+
+	public void visualizarPropiedades(Refresco refresco) {
+		System.out.println(" Sabor: " + this.getSabor() + " Zumo: " + this.getZumo() + " Cantidad azucar"
+				+ this.getCantidadAzucar());
+	}
+
+	public boolean esSaludable() {
+		if (cantidadAzucar < 20) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 }
