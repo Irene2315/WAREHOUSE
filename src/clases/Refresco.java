@@ -1,6 +1,6 @@
 package clases;
 
-public class Refresco {
+public class Refresco extends Articulo {
 	private String sabor;
 	private boolean zumo;
 	private int cantidadAzucar;

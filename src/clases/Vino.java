@@ -1,6 +1,6 @@
 package clases;
 
-public class Vino {
+public class Vino extends Articulo {
 	
 	private String color;
 	private String origen;
