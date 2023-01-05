@@ -95,6 +95,22 @@ public class Articulo {
 		}
 	}
 	
+	public boolean saludable(ArrayList <Articulo> articulos,String clase) {
+		
+		boolean resultado;
+for (int i = 0; i < articulos.size(); i++) {
+			
+	if (clase.equals("refresco") ) {
+		resultado=Refresco.esSaludable(articulos.get(i));
+	}
+	else if (clase.equals("vino")) {
+		
+	}
+		
+		
+	}
+	}
+	
 	
 	
 	

@@ -45,12 +45,12 @@ public class Refresco extends Articulo {
 		return super.toString()+ "Sabor: " + this.sabor + "Zumo: " + this.zumo + " CantidadAzucar: " + this.cantidadAzucar + "]";
 	}
 
-	public void visualizarPropiedades(Refresco refresco) {
+	public void visualizarPropiedades(String refresco) {
 		System.out.println(" Sabor: " + this.sabor + " Zumo: " + this.zumo + " Cantidad azucar"
 				+ this.cantidadAzucar);
 	}
 
-	public boolean esSaludable() {
+	public boolean esSaludable(String refresco) {
 		if (cantidadAzucar < 20) {
 			return true;
 		} else {
