@@ -63,6 +63,10 @@ public class Articulo {
 	public void setStock(int stock) {
 		this.stock = stock;
 	}
+	public String toString() {
+		return "Articulo" + this.name + "CapacidadBotella:" + this.capacidadBotella + " Precio: "
+				+ this.precio + " Stock=" + this.stock ;
+	}
 	
 	public void incrementarStock(int cantidad) {
 		int total;
@@ -77,6 +81,10 @@ public class Articulo {
 		total=total-cantidad;
 		System.out.println("El stock actual es de "+total+" unidades");
 	}
+	
+	
+	
+
 	public void visualizarArticulo(ArrayList <Articulo> articulos, String code_user  ) {
 		
 		for (int i = 0; i < articulos.size(); i++) {

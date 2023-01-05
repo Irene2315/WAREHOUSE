@@ -39,10 +39,15 @@ public class Refresco extends Articulo {
 	public void setCantidadAzucar(int cantidadAzucar) {
 		this.cantidadAzucar = cantidadAzucar;
 	}
+	
+	@Override
+	public String toString() {
+		return super.toString()+ "Sabor: " + this.sabor + "Zumo: " + this.zumo + " CantidadAzucar: " + this.cantidadAzucar + "]";
+	}
 
 	public void visualizarPropiedades(Refresco refresco) {
-		System.out.println(" Sabor: " + this.getSabor() + " Zumo: " + this.getZumo() + " Cantidad azucar"
-				+ this.getCantidadAzucar());
+		System.out.println(" Sabor: " + this.sabor + " Zumo: " + this.zumo + " Cantidad azucar"
+				+ this.cantidadAzucar);
 	}
 
 	public boolean esSaludable() {
