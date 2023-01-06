@@ -1,17 +1,15 @@
 package clases;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Articulo {
-	private static Scanner Scanner;
+
 	private String code;
 	private String name;
 	private int capacidadBotella;
 	private double precio;
 	private int stock;
-	
-	
+
 	public Articulo(String code, String name, int capacidadBotella, double precio, int stock) {
 		this.code = code;
 		this.name = name;
@@ -19,9 +17,9 @@ public class Articulo {
 		this.precio = precio;
 		this.stock = stock;
 	}
-	
+
 	public Articulo() {
-		
+
 	}
 
 	public String getCode() {
@@ -63,55 +61,68 @@ public class Articulo {
 	public void setStock(int stock) {
 		this.stock = stock;
 	}
+
 	public String toString() {
-		return "Articulo" + this.name + "CapacidadBotella:" + this.capacidadBotella + " Precio: "
-				+ this.precio + " Stock=" + this.stock ;
+		return "Articulo" + this.name + "CapacidadBotella:" + this.capacidadBotella + " Precio: " + this.precio
+				+ " Stock=" + this.stock;
 	}
-	
+
 	public void incrementarStock(int cantidad) {
 		int total;
-		total=0;
-		total=total+cantidad;
-		System.out.println("El stock actual es de "+total+ " unidades");
+		total = 0;
+		total = total + cantidad;
+		System.out.println("El stock actual es de " + total + " unidades");
 	}
-	
+
 	public void disminuirStock(int cantidad) {
 		int total;
-		total=0;
-		total=total-cantidad;
-		System.out.println("El stock actual es de "+total+" unidades");
+		total = 0;
+		total = total - cantidad;
+		System.out.println("El stock actual es de " + total + " unidades");
 	}
-	
-	
-	
 
-	public void visualizarArticulo(ArrayList <Articulo> articulos, String code_user  ) {
-		
+	public void visualizarArticulo(ArrayList<Articulo> articulos, String code_user) {
+
 		for (int i = 0; i < articulos.size(); i++) {
-			
-			if(code == code_user) {
+
+			if (code == code_user) {
 				System.out.println(articulos.get(i));
 			}
 		}
 	}
-	
-	public boolean saludable(ArrayList <Articulo> articulos,String clase) {
-		
+
+	public boolean saludable(ArrayList<Articulo> articulos, String clase, String code_user) {
+
 		boolean resultado;
-for (int i = 0; i < articulos.size(); i++) {
-			
-	if (clase.equals("refresco") ) {
-		resultado=Refresco.esSaludable(articulos.get(i));
+		resultado = false;
+		for (int i = 0; i < articulos.size(); i++) {
+			if (code == code_user) {
+				if (clase.equals("refresco")) {
+					// resultado= Refresco.esSaludable(articulos.get(i));
+				} else if (clase.equals("vino")) {
+					/*
+					 * if (Vino.getOrigen.equals("navarra")) { resultado=true; } else {
+					 * resultado=false; }
+					 * 
+					 * 
+					 */
+				} else { // es cerveza
+					resultado = true;
+				}
+
+			}
+		}
+		return resultado;
+
 	}
-	else if (clase.equals("vino")) {
-		
+
+	public void precioTotal(ArrayList<Articulo> articulos) {
+		double total;
+		total = 0;
+		for (int i = 0; i < articulos.size(); i++) {
+			total = getPrecio() + total;
+		}
+		System.out.println("El precio total es:" + total);
 	}
-		
-		
-	}
-	}
-	
-	
-	
-	
+
 }
