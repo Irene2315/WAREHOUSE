@@ -72,11 +72,7 @@ public class Factura {
 		lineaFactura.setNumero(numero);
 		lineaFactura.setArticulo(articulo);
 		lineaFactura.setCantidad(cantidad);
-		
-		
-		
-		
-		
+			
 	}
 	
 	
