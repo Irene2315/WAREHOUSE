@@ -62,10 +62,9 @@ public class Articulo {
 		this.stock = stock;
 	}
 
-	public String toString() {
-		return "Articulo" + this.name + "CapacidadBotella:" + this.capacidadBotella + " Precio: " + this.precio
-				+ " Stock=" + this.stock;
-	}
+	
+
+	
 
 	public void incrementarStock(int cantidad) {
 		int total;
@@ -81,14 +80,10 @@ public class Articulo {
 		System.out.println("El stock actual es de " + total + " unidades");
 	}
 
-	public void visualizarArticulo(ArrayList<Articulo> articulos, String code_user) {
-
-		for (int i = 0; i < articulos.size(); i++) {
-
-			if (code == code_user) {
-				System.out.println(articulos.get(i));
-			}
-		}
+	public void visualizarArticulo() {
+		System.out.println( "Code: " + this.code +  "Name: " + this.name + "CapacidadBotella: " + this.capacidadBotella + 
+				" Precio="+ this.precio + "Stock: " + this.stock );
+		
 	}
 
 	public boolean saludable(ArrayList<Articulo> articulos, String clase, String code_user) {

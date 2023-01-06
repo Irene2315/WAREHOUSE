@@ -32,9 +32,10 @@ public double getGradosAlcohol() {
 public void setGradosAlcohol(double gradosAlcohol) {
 	this.gradosAlcohol = gradosAlcohol;
 }
-@Override
-public String toString() {
-	return "Origen=" + this.origen + " Cereales: " + this.cereales + " GradosAlcohol: " + this.gradosAlcohol ;
+
+public void visualizarPropiedades() {
+	super.visualizarArticulo();
+	System.out.println("Origen=" + this.origen + " Cereales: " + this.cereales + " GradosAlcohol: " + this.gradosAlcohol);
 }
  
 }

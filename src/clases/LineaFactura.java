@@ -2,7 +2,7 @@ package clases;
 
 public class LineaFactura extends Factura {
 	private int numero;
-	private Articulo articulo;
+	private Articulo articulo= new Articulo();
 	private double cantidad;
 	
 	public LineaFactura(int numero, Articulo articulo, double cantidad) {
@@ -50,8 +50,8 @@ public class LineaFactura extends Factura {
     
     public void mostrarEnPantalla() {
 		System.out.println(
-				this.numero+ "\t" + 	
-				this.articulo + "\t" + 
+				this.numero+ "\t" + 
+				//this.articulo.visualizarArticulo() +
 				this.cantidad + "\t" +
 				this.precioTotal());
 	}

@@ -60,11 +60,11 @@ public class Vino extends Articulo {
 	public void setGradosAlcohol(double gradosAlcohol) {
 		this.gradosAlcohol = gradosAlcohol;
 	}
-
-	@Override
-	public String toString() {
-		return super.toString()+ "Color: " + this.color + " Origen: " + this.origen + " Añio: " + this.anio + " TipoDeUva=" + this.tipoDeUva
-				+ " GradosAlcohol=" + this.gradosAlcohol ;
+	
+	public void visualizarPropiedades() {
+		super.visualizarArticulo();
+		System.out.print("Color: " + this.color + " Origen: " + this.origen + " Añio: " + this.anio + " TipoDeUva: " + this.tipoDeUva +
+		 " GradosAlcohol: " + this.gradosAlcohol);
 	}
 	
 	
