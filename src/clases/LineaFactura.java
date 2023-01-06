@@ -40,7 +40,7 @@ public class LineaFactura extends Factura {
 		this.cantidad = cantidad;
 	}
 	
-    public double precioTotal(Articulo articulo) {
+    public double precioTotal() {
 		double total;
 		total=0;
 		total= articulo.getPrecio()*getCantidad();
