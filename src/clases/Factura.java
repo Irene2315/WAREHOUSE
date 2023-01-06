@@ -1,6 +1,10 @@
 package clases;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Factura {
@@ -10,6 +14,8 @@ public class Factura {
 	private String nombreEmpresa;
 	private Date fecha;
 	private String concepto;
+	private ArrayList<LineaFactura> lineasFacturas=new ArrayList<LineaFactura>();
+	
 	private static Scanner scanner;
 	
 	public Factura(int numero, String nombreEmpresa, Date fecha, String concepto) {
@@ -72,8 +78,67 @@ public class Factura {
 		lineaFactura.setNumero(numero);
 		lineaFactura.setArticulo(articulo);
 		lineaFactura.setCantidad(cantidad);
+		
 			
 	}
+	
+  public void eliminarLinea(int numeroLinea) {
+	 Iterator <LineaFactura> it = lineasFacturas.iterator();
+	 while (it.hasNext()) {
+		 LineaFactura lineaFactura =it.next();
+		 if (numeroLinea == lineaFactura.getNumero()) {
+			 it.remove();
+			 System.out.println("La línea ha sido eliminada con exito eliminado con exito");
+		 }
+	 }
+	 
+	 
+	 
+  }
+  
+  public double precioTotal() {
+	 
+	  double total;
+	  total=0;
+	  for (int i = 0; i < lineasFacturas.size(); i++) {
+		  
+		total=lineasFacturas.get(i).precioTotal() +total;
+	}
+	  return total;
+  }
+
+
+public void mostrarEnPantalla() {
+	System.out.println("Numero factura: " + this.numero + "\t\t" + this.nombreEmpresa);
+	System.out.println("Fecha: " + formatoFechaString(this.fecha));
+	System.out.println(this.concepto);
+	
+	System.out.println("num\tart.\tprecio\tcant.\ttotal");
+	System.out.println("---\t----\t------\t-----\t-----");
+	for (int i = 0; i < lineasFacturas.size(); i++) {
+		LineaFactura lineaFactura = new LineaFactura();
+		lineaFactura.mostrarEnPantalla();
+	}
+	
+	System.out.println("\t\t\t---Total: " + this.precioTotal());
+	
+	
+}
+  
+public static Date formatoFechaDate(String fechaString) throws ParseException {
+	Date fecha_factura;
+	SimpleDateFormat formatoLecturaFecha= new SimpleDateFormat("dd-MM-yyyy");
+	fecha_factura= formatoLecturaFecha.parse(fechaString);
+	return fecha_factura;
+}
+
+public static String formatoFechaString(Date fecha) {
+	String fechaString;
+	SimpleDateFormat fecha_impresion= new SimpleDateFormat("dd-MM-yyyy");
+	fechaString=fecha_impresion.format(fecha);
+	return fechaString;
+} 
+	
 	
 	
 }
