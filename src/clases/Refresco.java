@@ -40,7 +40,7 @@ public class Refresco extends Articulo {
 		this.cantidadAzucar = cantidadAzucar;
 	}
 
-	public void visualizarPropiedades(String refresco) {
+	public void visualizarPropiedades() {
 		super.visualizarArticulo();
 		System.out.print( " Sabor: " + this.sabor + " Zumo: " + this.zumo + " Cantidad azucar"
 				+ this.cantidadAzucar);
