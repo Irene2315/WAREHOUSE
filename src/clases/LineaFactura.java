@@ -2,7 +2,7 @@ package clases;
 
 public class LineaFactura extends Factura {
 	private int numero;
-	private Articulo articulo= new Articulo();
+	private Articulo articulo;
 	private double cantidad;
 	
 	public LineaFactura(int numero, Articulo articulo, double cantidad) {

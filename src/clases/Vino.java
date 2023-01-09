@@ -1,6 +1,8 @@
 package clases;
 
-public class Vino extends Articulo {
+import interfáces.Alcoholico;
+
+public class Vino extends Articulo  implements Alcoholico{
 	
 	private String color;
 	private String origen;
@@ -65,6 +67,29 @@ public class Vino extends Articulo {
 		super.visualizarArticulo();
 		System.out.print("Color: " + this.color + " Origen: " + this.origen + " Añio: " + this.anio + " TipoDeUva: " + this.tipoDeUva +
 		 " GradosAlcohol: " + this.gradosAlcohol);
+	}
+	
+	public boolean esFuerte() {
+		
+		if (gradosAlcohol>13.5) {
+		      return true;
+		}
+		else {
+			 return false;
+		}
+		
+		
+	}
+	
+	public double calcularTasa() {
+		double total;
+		if(esFuerte()==true) {
+			total= (getCapacidadBotella()*TASA_BEBIDAS_FUERTES/10000);
+		}
+		else {
+			total= (getCapacidadBotella()*TASA_BEBIDAS_DEBILES/10000);
+		}
+		return total;
 	}
 	
 	

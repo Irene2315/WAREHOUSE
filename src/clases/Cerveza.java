@@ -1,6 +1,8 @@
 package clases;
 
-public class Cerveza extends Articulo {
+import interfáces.Alcoholico;
+
+public class Cerveza extends Articulo implements Alcoholico {
  private String origen;
  private String cereales;
  private double gradosAlcohol;
@@ -36,6 +38,29 @@ public void setGradosAlcohol(double gradosAlcohol) {
 public void visualizarPropiedades() {
 	super.visualizarArticulo();
 	System.out.println("Origen=" + this.origen + " Cereales: " + this.cereales + " GradosAlcohol: " + this.gradosAlcohol);
+}
+
+public boolean esFuerte() {
+	
+	if (gradosAlcohol>7.0) {
+	      return true;
+	}
+	else {
+		 return false;
+	}
+	
+	
+}
+
+public double calcularTasa() {
+	double total;
+	if(esFuerte()==true) {
+		total= (getCapacidadBotella()*TASA_BEBIDAS_FUERTES/10000);
+	}
+	else {
+		total= (getCapacidadBotella()*TASA_BEBIDAS_DEBILES/10000);
+	}
+	return total;
 }
  
 }

@@ -2,7 +2,7 @@ package clases;
 
 import java.util.ArrayList;
 
-public class Articulo {
+public class   Articulo {
 
 	private String code;
 	private String name;
