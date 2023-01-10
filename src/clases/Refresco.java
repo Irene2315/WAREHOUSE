@@ -41,17 +41,29 @@ public class Refresco extends Articulo {
 	}
 
 	public void visualizarPropiedades() {
-		super.visualizarArticulo();
-		System.out.print( " Sabor: " + this.sabor + " Zumo: " + this.zumo + " Cantidad azucar"
+
+		System.out.print(" Sabor: " + this.sabor + " Zumo: " + this.zumo + " Cantidad azucar" + this.cantidadAzucar);
+	}
+
+	public void visualizarArticulo() {
+		System.out.print(super.toString() + " Sabor: " + this.sabor + " Zumo: " + this.zumo + " Cantidad azucar"
 				+ this.cantidadAzucar);
 	}
 
-	public boolean esSaludable(String refresco) {
+	public boolean saludable() {
 		if (cantidadAzucar < 20) {
 			return true;
 		} else {
 			return false;
 		}
+	}
+
+	public void precioTotal() {
+		double total;
+		total = 0;
+		total = getPrecio() + Factura.IVA;
+		System.out.println("El precio total es:" + total);
+
 	}
 
 }

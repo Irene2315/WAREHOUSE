@@ -51,7 +51,7 @@ public class LineaFactura extends Factura {
     public void mostrarEnPantalla() {
 		System.out.println(
 				this.numero+ "\t" + 
-				//this.articulo.visualizarArticulo() +
+				this.articulo.getName()+ "\t"+ this.articulo.getPrecio()+ "\t"+
 				this.cantidad + "\t" +
 				this.precioTotal());
 	}

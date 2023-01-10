@@ -1,11 +1,12 @@
 package clases;
 
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
-import java.util.Scanner;
+
 
 public class Factura {
 
@@ -16,7 +17,7 @@ public class Factura {
 	private String concepto;
 	private ArrayList<LineaFactura> lineasFacturas=new ArrayList<LineaFactura>();
 	
-	private static Scanner scanner;
+	
 	
 	public Factura(int numero, String nombreEmpresa, Date fecha, String concepto) {
 		super();
@@ -63,21 +64,8 @@ public class Factura {
 	}
 	
 	public void addLinea(LineaFactura lineaFactura) {
-		int numero;
-		Articulo articulo = new Articulo();
-		int cantidad;
-		
-		
-		System.out.println("Introduce el número de artículo:");
-		numero=scanner.nextInt();
-		// leer y  recibir datos de articulo
-		
-		System.out.println("Introduce la cantidad: ");
-		cantidad=scanner.nextInt();
-		
-		lineaFactura.setNumero(numero);
-		lineaFactura.setArticulo(articulo);
-		lineaFactura.setCantidad(cantidad);
+		this.lineasFacturas.add(lineaFactura);
+
 		
 			
 	}

@@ -1,8 +1,8 @@
 package clases;
 
-import java.util.ArrayList;
 
-public class   Articulo {
+
+public abstract  class  Articulo {
 
 	private String code;
 	private String name;
@@ -80,44 +80,17 @@ public class   Articulo {
 		System.out.println("El stock actual es de " + total + " unidades");
 	}
 
-	public void visualizarArticulo() {
-		System.out.println( "Code: " + this.code +  "Name: " + this.name + "CapacidadBotella: " + this.capacidadBotella + 
-				" Precio="+ this.precio + "Stock: " + this.stock );
-		
+	public abstract  void visualizarArticulo() ;
+	
+	
+	public String toString() {
+		return  "Code: " + this.code +  "Name: " + this.name + "CapacidadBotella: " + this.capacidadBotella + 
+				" Precio="+ this.precio + "Stock: " + this.stock;
 	}
 
-	public boolean saludable(ArrayList<Articulo> articulos, String clase, String code_user) {
+	public abstract boolean saludable();
 
-		boolean resultado;
-		resultado = false;
-		for (int i = 0; i < articulos.size(); i++) {
-			if (code == code_user) {
-				if (clase.equals("refresco")) {
-					// resultado= Refresco.esSaludable(articulos.get(i));
-				} else if (clase.equals("vino")) {
-					/*
-					 * if (Vino.getOrigen.equals("navarra")) { resultado=true; } else {
-					 * resultado=false; }
-					 * 
-					 * 
-					 */
-				} else { // es cerveza
-					resultado = true;
-				}
-
-			}
-		}
-		return resultado;
-
-	}
-
-	public void precioTotal(ArrayList<Articulo> articulos) {
-		double total;
-		total = 0;
-		for (int i = 0; i < articulos.size(); i++) {
-			total = getPrecio() + total;
-		}
-		System.out.println("El precio total es:" + total);
-	}
+	public abstract  void precioTotal();
+	
 
 }
