@@ -118,7 +118,7 @@ public void mostrarEnPantalla() {
 
 public void guardarEnFichero() throws FileNotFoundException {
 	
-	PrintWriter writer = new PrintWriter("recursos/" +nombreFichero());
+	PrintWriter writer = new PrintWriter("facturas/" +nombreFichero());
 	
 	writer.close();
 }

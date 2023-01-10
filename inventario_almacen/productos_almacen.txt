@@ -1,0 +1,9 @@
+cerveza:0001:la_pinta:heineken:33:1.50:120:granada:cebada:6.0
+cerveza:0002:la_niña:corona:33:1.70:300:teruel:lupulo:8.0
+cerveza:0003:la_santa:guinness:33:2.50:200:US:lupulo:7.0
+vino:1001:murrieta:bodega_marqués:750:6.90:300:tinto:la_rioja:2010:garnacha:15.0
+vino:1002:chacayes:bodega_piedra:750:3.30:150:rosado:navarra:2019:graciano:11.0
+vino:1003:montes:bodega_montecillo:750:8.90:200:blanco:navarra:2008:merlot:14.0
+refresco:2001:aquarius:cocacola:33:1.5:300:naranja:true:false:33
+refresco:2002:fanta_limon:cocacola:33:2.5:150:limon:true:true:55
+refresco:2003:mosto:greip:35:2.3:300:manzana:true:false:10
