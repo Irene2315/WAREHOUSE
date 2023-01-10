@@ -1,6 +1,8 @@
 package clases;
 
 
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -63,6 +65,7 @@ public class Factura {
 		this.concepto = concepto;
 	}
 	
+	
 	public void addLinea(LineaFactura lineaFactura) {
 		this.lineasFacturas.add(lineaFactura);
 
@@ -111,6 +114,19 @@ public void mostrarEnPantalla() {
 	System.out.println("\t\t\t---Total: " + this.precioTotal());
 	
 	
+}
+
+public void guardarEnFichero() throws FileNotFoundException {
+	
+	PrintWriter writer = new PrintWriter("recursos/" +nombreFichero());
+	
+	writer.close();
+}
+
+public String nombreFichero() {
+	String nombreDelFichero = getNumero() + "_" + getFecha() + "_factura.txt";
+	
+	return nombreDelFichero;
 }
   
 public static Date formatoFechaDate(String fechaString) throws ParseException {
