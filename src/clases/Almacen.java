@@ -60,7 +60,7 @@ public class Almacen {
 				refresco.setStock(Integer.parseInt(partes[5]));
 				refresco.setSabor(partes[6]);
 				refresco.setZumo(Boolean.parseBoolean(partes [7]));
-				refresco.setCantidadAzucar(Integer. parseInt (partes[7]));
+				refresco.setCantidadAzucar(Integer. parseInt (partes[8]));
 				
 			
 
