@@ -19,44 +19,59 @@ public class Almacen {
 			partes = linea.split(":");
 
 			if (partes[0].equals("cerveza")) {
-				/*
-				 * Cerveza guardar_cerveza = new Cerveza ( (partes[1]) , (partes[2]),
-				 * Integer.parseInt(partes[3]), Double.parseDouble(partes[4]),
-				 * Integer.parseInt(partes[5]), (partes[6]), (partes[7])
-				 * ,Double.parseDouble(partes[8]) );
-				 */
+				
+				 Cerveza cerveza = new Cerveza();
+				 cerveza.setCode(partes[1]);
+				 cerveza.setName(partes[2]);
+				 cerveza.setCapacidadBotella(Integer.parseInt(partes[3]));
+				 cerveza.setPrecio(Double.parseDouble(partes[4]));
+				 cerveza.setStock(Integer.parseInt(partes[5]));
+				 cerveza.setOrigen(partes[6]);
+				 cerveza.setCereales(partes[7]);
+				 cerveza.setGradosAlcohol(Double.parseDouble(partes[8]) );
+				 
 
-				// articulos.add(guardar_cerveza);
+				articulos.add(cerveza);
 
 			}
 			if (partes[0].equals("vino")) {
-				/*
-				 * Vino guardar_vino = new Vino((partes[1]),(partes[2]), Integer.
-				 * parseInt(partes[3]),Double.parseDouble(partes[4]),
-				 * Integer.parseInt(partes[5]),(partes[6]),(partes[7]), Integer.
-				 * parseInt(partes[8]), (partes[9]), Double.parseDouble(partes[10]));
-				 * 
-				 */
-
-				// articulos.add(guardar_vino);
+				
+				 Vino vino = new Vino();
+				 vino.setCode(partes[1]);
+				 vino.setName(partes[2]);
+				 vino.setCapacidadBotella(Integer.parseInt(partes[3]));
+				 vino.setPrecio(Double.parseDouble(partes[4]));
+				 vino.setStock(Integer.parseInt(partes[5]));
+				 vino.setColor(partes[6]);
+				 vino.setOrigen(partes[7]);
+				 vino.setAnio(Integer.parseInt(partes[8]));
+				 vino.setTipoDeUva(partes[9]);
+				 vino.setGradosAlcohol(Double.parseDouble(partes[10]));
+				 
+				
+				articulos.add(vino);
 			}
 			if (partes[0].equals("refresco")) {
+				Refresco refresco = new Refresco();
+				refresco.setCode(partes[1]);
+				refresco.setName(partes[2]);
+				refresco.setCapacidadBotella(Integer.parseInt(partes[3]));
+				refresco.setPrecio(Double.parseDouble(partes[4]));
+				refresco.setStock(Integer.parseInt(partes[5]));
+				refresco.setSabor(partes[6]);
+				refresco.setZumo(Boolean.parseBoolean(partes [7]));
+				refresco.setCantidadAzucar(Integer. parseInt (partes[7]));
+				
+			
 
-				/*
-				 * Refresco guardar_refresco = new Refresco ((partes[1]),(partes[2]), Integer.
-				 * parseInt(partes[3]),Double.parseDouble(partes[4]), (partes [5]),
-				 * Boolean.parseBoolean(partes [6]), Integer. parseInt (partes[7]);
-				 * 
-				 */
-
-				// articulos.add(guardar_refresco);
+				articulos.add(refresco);
 
 			}
 
 		}
 
 		lectorFichero.close();
-		// return articulos;
+	
 
 	}
 	
