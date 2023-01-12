@@ -2,7 +2,7 @@ package clases;
 
 
 
-public abstract  class  Articulo {
+public abstract  class  Articulo  {
 
 	private String code;
 	private String name;
@@ -92,5 +92,21 @@ public abstract  class  Articulo {
 
 	public abstract  void precioTotal();
 	
+	//ordenar elementos de la lista
+	public int ordernarPorPrecioMenorMayor( Articulo articulo) {
+		int estado;
+		
+		if (this.getPrecio()> articulo.getPrecio()) {
+			estado=1;
+		}
+		else if(this.getPrecio()< articulo.getPrecio()) {
+			estado=-1;
+		}
+		else {
+			estado=0;
+		}
+		return estado;
+			
+	}
 
 }

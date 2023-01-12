@@ -3,6 +3,7 @@ package clases;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class Almacen {
@@ -90,7 +91,7 @@ public class Almacen {
 	}
 
 	public double precio(String codigoProducto) {
-		double precio= 0;
+		double precio = 0;
 		for (Articulo articulo : articulos) {
 			if (articulo.getCode().equals(codigoProducto)) {
 				precio = articulo.getPrecio();
@@ -100,7 +101,7 @@ public class Almacen {
 	}
 
 	public boolean hayStock(String codigoProducto) {
-		boolean stock= false;
+		boolean stock = false;
 		for (Articulo articulo : articulos) {
 			if (articulo.getCode().equals(codigoProducto)) {
 				if (articulo.getStock() > 0) {
@@ -136,7 +137,7 @@ public class Almacen {
 	}
 
 	public boolean disponibilidad(int cantidad, String codigoProducto) {
-		boolean stock= false;
+		boolean stock = false;
 		for (Articulo articulo : articulos) {
 			if (articulo.getCode().equals(codigoProducto)) {
 				if (articulo.getStock() > cantidad) {
@@ -148,46 +149,115 @@ public class Almacen {
 		}
 		return stock;
 	}
-	
-	public ArrayList<Articulo>  equivalente (Articulo articulo) {
-		double diferencia_1=0;
-		double diferencia_2=0;
+
+	public ArrayList<Articulo> equivalente(Articulo articulo) {
+		double diferencia_1 = 0;
+		double diferencia_2 = 0;
 		ArrayList<Articulo> equivalentes = new ArrayList<Articulo>();
 		for (Articulo articulo_equivalente : articulos) {
 			if (articulo.getName().equals(articulo_equivalente.getName())) {
-				diferencia_1=articulo.getPrecio() - articulo_equivalente.getPrecio();
-				diferencia_2=articulo_equivalente.getPrecio() - articulo.getPrecio() ;
-				if((diferencia_1==0.2) || ( diferencia_2==0.2)) {
+				diferencia_1 = articulo.getPrecio() - articulo_equivalente.getPrecio();
+				diferencia_2 = articulo_equivalente.getPrecio() - articulo.getPrecio();
+				if ((diferencia_1 == 0.2) || (diferencia_2 == 0.2)) {
 					equivalentes.add(articulo);
 					equivalentes.add(articulo_equivalente);
-					
+
 				}
 			}
 		}
 		return equivalentes;
 	}
-  
-  public ArrayList<Articulo> ordenarPorPrecio(String orden){
-	double precio_Mbajo=0;
-	int i = 0;
-	Articulo auxiliar=null;
-	ArrayList<Articulo> ordenado = new ArrayList <Articulo>();
-	
-	 if (orden=="ACS") { //menor a mayor
-		 for (Articulo articulo : articulos) {
-			 if (precio_Mbajo<articulo.getPrecio()) {
-				 auxiliar=articulo;
-			 }
-		 
-		 
-		
-		 	
-	 }
-	 
-	 if(orden=="DESC") { // mayor a menor
-		 
-	 }
-  }
 
-}
+	public ArrayList<Articulo> ordenarPorPrecio(String orden) {
+		
+		ArrayList<Articulo> ordenado = new ArrayList<Articulo>();
+
+		if (orden == "ACS") { // menor a mayor
+			class menorMayorP implements Comparator<Articulo> {
+
+				public int compare(Articulo a1, Articulo a2) {
+					if (a1.getPrecio() > a2.getPrecio()) {
+						return 1;
+					} else if (a1.getPrecio() < a2.getPrecio()) {
+
+						return -1;
+					} else {
+						return 0;
+					}
+
+				}
+
+			}
+			// ordenado=articulos.sort(menorMayorP.compare(articulos,new menorMayorP()));
+			// Collections.sort(articulos,new menorMayorP());
+		}
+
+		if (orden == "DESC") { // mayor a menor
+
+			class mayorMenorP implements Comparator<Articulo> {
+				public int compare(Articulo a1, Articulo a2) {
+					if (a1.getPrecio() > a2.getPrecio()) {
+						return -1;
+					} else if (a1.getPrecio() < a2.getPrecio()) {
+
+						return 1;
+					} else {
+						return 0;
+					}
+
+				}
+			}
+			// ordenado=articulos.sort(mayorMenorP.compare(articulos,new menorMayorP()));
+			// Collections.sort(articulos,new menorMayorP());
+
+		}
+		return ordenado;
+	}
+	
+	public ArrayList<Articulo> ordenarPorStock(String orden){
+		ArrayList<Articulo> ordenado = new ArrayList<Articulo>();
+		
+		if (orden=="ASC") {
+			class menorMayorS implements Comparator<Articulo> {
+
+				public int compare(Articulo a1, Articulo a2) {
+					if (a1.getStock() > a2.getStock()) {
+						return 1;
+					} else if (a1.getStock() < a2.getStock()) {
+
+						return -1;
+					} else {
+						return 0;
+					}
+
+				}
+
+			}
+			// ordenado=articulos.sort(menorMayorS.compare(articulos,new menorMayorP()));
+			//Collections.sort(articulos,new menorMayorS());
+		}
+	  if (orden == "DESC") {
+		  
+		  class mayorMenorS implements Comparator <Articulo>{
+			  public int compare(Articulo a1, Articulo a2) {
+					if (a1.getStock() > a2.getStock()) {
+						return -1;
+					} else if (a1.getStock() < a2.getStock()) {
+
+						return 1;
+					} else {
+						return 0;
+					}
+
+				}
+
+		  }
+		// ordenado=articulos.sort(menorMayorS.compare(articulos,new menorMayorP()));
+		// Collections.sort(articulos,new menorMayorS());
+		  
+	  }
+	  return ordenado;
+	}
+	
+
 }
