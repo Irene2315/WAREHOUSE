@@ -7,10 +7,10 @@ import java.util.Comparator;
 import java.util.Scanner;
 
 public class Almacen {
-	ArrayList<Articulo> articulos = new ArrayList<Articulo>();
-	File file = new File("inventario_almacen/productos_almacen.txt");
+	static ArrayList<Articulo> articulos = new ArrayList<Articulo>();
+	static File file = new File("inventario_almacen/productos_almacen.txt");
 
-	public void cargarDatos() throws FileNotFoundException {
+	public static void cargarDatos() throws FileNotFoundException {
 		Scanner lectorFichero = new Scanner(file);
 		String linea;
 		String[] partes;
@@ -24,12 +24,13 @@ public class Almacen {
 				Cerveza cerveza = new Cerveza();
 				cerveza.setCode(partes[0]);
 				cerveza.setName(partes[1]);
-				cerveza.setCapacidadBotella(Integer.parseInt(partes[2]));
-				cerveza.setPrecio(Double.parseDouble(partes[3]));
-				cerveza.setStock(Integer.parseInt(partes[4]));
-				cerveza.setOrigen(partes[5]);
-				cerveza.setCereales(partes[6]);
-				cerveza.setGradosAlcohol(Double.parseDouble(partes[7]));
+				cerveza.setMark(partes[2]);
+				cerveza.setCapacidadBotella(Integer.parseInt(partes[3]));
+				cerveza.setPrecio(Double.parseDouble(partes[4]));
+				cerveza.setStock(Integer.parseInt(partes[5]));
+				cerveza.setOrigen(partes[6]);
+				cerveza.setCereales(partes[7]);
+				cerveza.setGradosAlcohol(Double.parseDouble(partes[8]));
 
 				articulos.add(cerveza);
 
@@ -39,14 +40,15 @@ public class Almacen {
 				Vino vino = new Vino();
 				vino.setCode(partes[0]);
 				vino.setName(partes[1]);
-				vino.setCapacidadBotella(Integer.parseInt(partes[2]));
-				vino.setPrecio(Double.parseDouble(partes[3]));
-				vino.setStock(Integer.parseInt(partes[4]));
-				vino.setColor(partes[5]);
-				vino.setOrigen(partes[6]);
-				vino.setAnio(Integer.parseInt(partes[7]));
-				vino.setTipoDeUva(partes[8]);
-				vino.setGradosAlcohol(Double.parseDouble(partes[9]));
+				vino.setMark(partes[2]);
+				vino.setCapacidadBotella(Integer.parseInt(partes[3]));
+				vino.setPrecio(Double.parseDouble(partes[4]));
+				vino.setStock(Integer.parseInt(partes[5]));
+				vino.setColor(partes[6]);
+				vino.setOrigen(partes[7]);
+				vino.setAnio(Integer.parseInt(partes[8]));
+				vino.setTipoDeUva(partes[9]);
+				vino.setGradosAlcohol(Double.parseDouble(partes[10]));
 
 				articulos.add(vino);
 			}
@@ -54,12 +56,13 @@ public class Almacen {
 				Refresco refresco = new Refresco();
 				refresco.setCode(partes[0]);
 				refresco.setName(partes[1]);
-				refresco.setCapacidadBotella(Integer.parseInt(partes[2]));
-				refresco.setPrecio(Double.parseDouble(partes[3]));
-				refresco.setStock(Integer.parseInt(partes[4]));
-				refresco.setSabor(partes[5]);
-				refresco.setZumo(Boolean.parseBoolean(partes[6]));
-				refresco.setCantidadAzucar(Integer.parseInt(partes[7]));
+				refresco.setMark(partes[2]);
+				refresco.setCapacidadBotella(Integer.parseInt(partes[3]));
+				refresco.setPrecio(Double.parseDouble(partes[4]));
+				refresco.setStock(Integer.parseInt(partes[5]));
+				refresco.setSabor(partes[6]);
+				refresco.setZumo(Boolean.parseBoolean(partes[7]));
+				refresco.setCantidadAzucar(Integer.parseInt(partes[8]));
 
 				articulos.add(refresco);
 

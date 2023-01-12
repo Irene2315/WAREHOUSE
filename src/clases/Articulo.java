@@ -6,13 +6,15 @@ public abstract  class  Articulo  {
 
 	private String code;
 	private String name;
+	private String mark;
 	private int capacidadBotella;
 	private double precio;
 	private int stock;
 
-	public Articulo(String code, String name, int capacidadBotella, double precio, int stock) {
+	public Articulo(String code, String name,String mark, int capacidadBotella, double precio, int stock) {
 		this.code = code;
 		this.name = name;
+		this.mark=mark;
 		this.capacidadBotella = capacidadBotella;
 		this.precio = precio;
 		this.stock = stock;
@@ -36,6 +38,14 @@ public abstract  class  Articulo  {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getMark() {
+		return mark;
+	}
+
+	public void setMark(String mark) {
+		this.mark = mark;
 	}
 
 	public int getCapacidadBotella() {
@@ -84,7 +94,7 @@ public abstract  class  Articulo  {
 	
 	
 	public String toString() {
-		return  "Code: " + this.code +  "Name: " + this.name + "CapacidadBotella: " + this.capacidadBotella + 
+		return  "Code: " + this.code +  "Name: " + this.name + "Marca:" +this.mark +"CapacidadBotella: " + this.capacidadBotella + 
 				" Precio="+ this.precio + "Stock: " + this.stock;
 	}
 
