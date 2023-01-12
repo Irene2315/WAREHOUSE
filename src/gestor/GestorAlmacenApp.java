@@ -21,11 +21,11 @@ public class GestorAlmacenApp {
 		do {
 			System.out.println("------MENU-------");
 			System.out.println("¿Qué desea realizar?");
-			System.out.println(REALIZAR_VENTA + ". 1-Comprar artículo");
-			System.out.println(REALIZAR_COMPRA + ". 2-Vender artículo");
-			System.out.println(VER_ARTICULOS_SALUDABLES + ". 3-Ver artículos saludable");
-			System.out.println(VER_ARTICULO_MAS_CARO + ". 4-Ver artículo más caro ");
-			System.out.println(VER_ARTICULOS_CON_MENOS_STOCK_10 + " 5-Ver artículos con menos Stock que 10");
+			System.out.println(REALIZAR_VENTA + ". Comprar artículo");
+			System.out.println(REALIZAR_COMPRA + ". Vender artículo");
+			System.out.println(VER_ARTICULOS_SALUDABLES + ". Ver artículos saludable");
+			System.out.println(VER_ARTICULO_MAS_CARO + ". Ver artículo más caro ");
+			System.out.println(VER_ARTICULOS_CON_MENOS_STOCK_10 + ". Ver artículos con menos Stock que 10");
 			System.out.println(SALIR + ". Salir");
 			System.out.println("*******************");
 			System.out.println("Elije una de las opciones");
@@ -35,6 +35,7 @@ public class GestorAlmacenApp {
 				String articulo_codigo;
 				Articulo articulo_comprar = null;
 				System.out.println("Introduzca el articulo que desea comprar");
+				teclado.nextLine();
 				articulo_codigo = teclado.nextLine();
 				articulo_comprar = Almacen.articulo(articulo_codigo);
 				Articulo.incrementarStock(articulo_comprar.getStock());

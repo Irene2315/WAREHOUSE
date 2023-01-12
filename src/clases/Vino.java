@@ -68,7 +68,10 @@ public class Vino extends Articulo implements Alcoholico {
 		System.out.print(super.toString() + "Color: " + this.color + " Origen: " + this.origen + " Añio: " + this.anio
 				+ " TipoDeUva: " + this.tipoDeUva + " GradosAlcohol: " + this.gradosAlcohol);
 	}
-
+public String paraFichero() {
+		
+		return super.paraFichero()+ this.color+ ":" +this.origen +":" +this.anio+":"+this.tipoDeUva+":"+ this.gradosAlcohol;
+	}
 	public void precioTotal() {
 		double total;
 		total = 0;

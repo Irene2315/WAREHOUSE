@@ -46,7 +46,10 @@ public class Cerveza extends Articulo implements Alcoholico {
 		System.out.println(super.toString() + "Origen=" + this.origen + " Cereales: " + this.cereales
 				+ " GradosAlcohol: " + this.gradosAlcohol);
 	}
-
+public String paraFichero() {
+		
+		return super.paraFichero()+ this.origen+ ":" +this.cereales+":" +this.gradosAlcohol;
+	}
 	public boolean saludable() {
 		if (cereales.toLowerCase().equals("lupulo")) {
 			return true;

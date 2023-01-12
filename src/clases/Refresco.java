@@ -59,6 +59,10 @@ public class Refresco extends Articulo {
 		System.out.print(super.toString() + " Sabor: " + this.sabor + " Zumo: " + this.zumo + " Cantidad azucar"
 				+ this.cantidadAzucar);
 	}
+	public String paraFichero() {
+		
+		return super.paraFichero()+ this.sabor+ ":" +this.zumo +":" +this.gaseoso+":"+this.cantidadAzucar;
+	}
 
 	public boolean saludable() {
 		if (cantidadAzucar < 20) {

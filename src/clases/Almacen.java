@@ -2,6 +2,7 @@ package clases;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Scanner;
@@ -263,6 +264,16 @@ public class Almacen {
 	  }
 	  return ordenado;
 	}
-	
+	public static void guardar() throws FileNotFoundException {
+		
+		
+		PrintWriter writer = new PrintWriter("inventario_almacen/productos_almacen.txt");
+		for (int j = 0; j < articulos.size(); j++) {
+			//writer.println(articulos[j].paraFichero());
+		}
+		System.out.println("Los nuevos cambios han sido guardados con exito!!");
+		writer.close();
+
+	}
 
 }

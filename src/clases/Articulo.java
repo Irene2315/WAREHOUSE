@@ -79,7 +79,7 @@ public abstract  class  Articulo  {
 	public static void incrementarStock(int cantidad) {
 		int total;
 		total = 0;
-		total = total + cantidad;
+		total = 1 + cantidad;
 		System.out.println("El stock actual es de " + total + " unidades");
 	}
 
@@ -97,7 +97,9 @@ public abstract  class  Articulo  {
 		return  "Code: " + this.code +  "Name: " + this.name + "Marca:" +this.mark +"CapacidadBotella: " + this.capacidadBotella + 
 				" Precio="+ this.precio + "Stock: " + this.stock;
 	}
-
+	public String paraFichero() {
+		return this.code+ ":" +this.name +":" +this.mark+":"+this.precio+":"+this.stock;
+	}
 	public abstract boolean saludable();
 
 	public abstract  void precioTotal();
