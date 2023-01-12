@@ -3,12 +3,14 @@ package clases;
 public class Refresco extends Articulo {
 	private String sabor;
 	private boolean zumo;
+	private boolean gaseoso;
 	private int cantidadAzucar;
 
-	public Refresco(String sabor, boolean zumo, int cantidadAzucar) {
+	public Refresco(String sabor, boolean zumo, boolean gaseoso, int cantidadAzucar) {
 		super();
 		this.sabor = sabor;
 		this.zumo = zumo;
+		this.gaseoso=gaseoso;
 		this.cantidadAzucar = cantidadAzucar;
 	}
 
@@ -31,6 +33,14 @@ public class Refresco extends Articulo {
 	public void setZumo(boolean zumo) {
 		this.zumo = zumo;
 	}
+	
+	public boolean isGaseoso() {
+		return gaseoso;
+	}
+
+	public void setGaseoso(boolean gaseoso) {
+		this.gaseoso = gaseoso;
+	}
 
 	public int getCantidadAzucar() {
 		return cantidadAzucar;
@@ -42,7 +52,7 @@ public class Refresco extends Articulo {
 
 	public void visualizarPropiedades() {
 
-		System.out.print(" Sabor: " + this.sabor + " Zumo: " + this.zumo + " Cantidad azucar" + this.cantidadAzucar);
+		System.out.print(" Sabor: " + this.sabor + " Zumo: " + this.zumo + "Gaseoso: " +this.gaseoso+ " Cantidad azucar" + this.cantidadAzucar);
 	}
 
 	public void visualizarArticulo() {

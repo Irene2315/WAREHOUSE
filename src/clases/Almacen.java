@@ -62,7 +62,8 @@ public class Almacen {
 				refresco.setStock(Integer.parseInt(partes[5]));
 				refresco.setSabor(partes[6]);
 				refresco.setZumo(Boolean.parseBoolean(partes[7]));
-				refresco.setCantidadAzucar(Integer.parseInt(partes[8]));
+				refresco.setGaseoso(Boolean.parseBoolean(partes[8]));
+				refresco.setCantidadAzucar(Integer.parseInt(partes[9]));
 
 				articulos.add(refresco);
 
@@ -74,13 +75,9 @@ public class Almacen {
 
 	}
 
-	public static void todos(ArrayList<Articulo> articulos) {
-		for (int i = 0; i < articulos.size(); i++) {
-			System.out.println(articulos.get(i));
-		}
-	}
+	
 
-	public Articulo elMasCaro() {
+	public static Articulo elMasCaro() {
 		double precio = 0;
 		Articulo articulo_caro = null;
 		for (Articulo articulo : articulos) {
@@ -93,7 +90,7 @@ public class Almacen {
 
 	}
 
-	public double precio(String codigoProducto) {
+	public static double precio(String codigoProducto) {
 		double precio = 0;
 		for (Articulo articulo : articulos) {
 			if (articulo.getCode().equals(codigoProducto)) {
@@ -103,7 +100,7 @@ public class Almacen {
 		return precio;
 	}
 
-	public boolean hayStock(String codigoProducto) {
+	public static boolean hayStock(String codigoProducto) {
 		boolean stock = false;
 		for (Articulo articulo : articulos) {
 			if (articulo.getCode().equals(codigoProducto)) {
@@ -117,29 +114,34 @@ public class Almacen {
 		return stock;
 	}
 
-	public ArrayList<Articulo> stockJusto(ArrayList<Articulo> articulos) {
+	public static ArrayList<Articulo> stockJusto(ArrayList<Articulo> articulos) {
 		int i = 0;
 		ArrayList<Articulo> menor_10 = new ArrayList<Articulo>();
 		for (Articulo articulo : articulos) {
 			if (articulo.getStock() < 10) {
 				menor_10.add(articulos.get(i));
+				i = i + 1;
 			}
 		}
-		i = i + 1;
+		
 		return menor_10;
 	}
 
-	public void articulo(String codigoProducto) {
+	public static Articulo articulo(String codigoProducto) {
 		int i = 0;
+		Articulo articulo_codigo=null;
 		for (Articulo articulo : articulos) {
 			if (articulo.getCode().equals(codigoProducto)) {
-				System.out.println(articulos.get(i));
+				articulo_codigo=(articulos.get(i));
+				
 			}
+			i = i + 1;
 		}
-		i = i + 1;
+		return articulo_codigo;
+		
 	}
 
-	public boolean disponibilidad(int cantidad, String codigoProducto) {
+	public static boolean disponibilidad(int cantidad, String codigoProducto) {
 		boolean stock = false;
 		for (Articulo articulo : articulos) {
 			if (articulo.getCode().equals(codigoProducto)) {
@@ -153,7 +155,7 @@ public class Almacen {
 		return stock;
 	}
 
-	public ArrayList<Articulo> equivalente(Articulo articulo) {
+	public static ArrayList<Articulo> equivalente(Articulo articulo) {
 		double diferencia_1 = 0;
 		double diferencia_2 = 0;
 		ArrayList<Articulo> equivalentes = new ArrayList<Articulo>();
@@ -171,7 +173,7 @@ public class Almacen {
 		return equivalentes;
 	}
 
-	public ArrayList<Articulo> ordenarPorPrecio(String orden) {
+	public static ArrayList<Articulo> ordenarPorPrecio(String orden) {
 		
 		ArrayList<Articulo> ordenado = new ArrayList<Articulo>();
 
@@ -217,7 +219,7 @@ public class Almacen {
 		return ordenado;
 	}
 	
-	public ArrayList<Articulo> ordenarPorStock(String orden){
+	public static ArrayList<Articulo> ordenarPorStock(String orden){
 		ArrayList<Articulo> ordenado = new ArrayList<Articulo>();
 		
 		if (orden=="ASC") {

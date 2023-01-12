@@ -76,14 +76,14 @@ public abstract  class  Articulo  {
 
 	
 
-	public void incrementarStock(int cantidad) {
+	public static void incrementarStock(int cantidad) {
 		int total;
 		total = 0;
 		total = total + cantidad;
 		System.out.println("El stock actual es de " + total + " unidades");
 	}
 
-	public void disminuirStock(int cantidad) {
+	public static void disminuirStock(int cantidad) {
 		int total;
 		total = 0;
 		total = total - cantidad;
