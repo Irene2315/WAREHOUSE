@@ -18,51 +18,47 @@ public class Almacen {
 			linea = lectorFichero.nextLine();
 			partes = linea.split(":");
 
-			if (partes[0].equals("cerveza")) {
-				
-				 Cerveza cerveza = new Cerveza();
-				 cerveza.setCode(partes[1]);
-				 cerveza.setName(partes[2]);
-				 cerveza.setCapacidadBotella(Integer.parseInt(partes[3]));
-				 cerveza.setPrecio(Double.parseDouble(partes[4]));
-				 cerveza.setStock(Integer.parseInt(partes[5]));
-				 cerveza.setOrigen(partes[6]);
-				 cerveza.setCereales(partes[7]);
-				 cerveza.setGradosAlcohol(Double.parseDouble(partes[8]) );
-				 
+			if (partes[1].equals("cerveza")) {
+
+				Cerveza cerveza = new Cerveza();
+				cerveza.setCode(partes[0]);
+				cerveza.setName(partes[1]);
+				cerveza.setCapacidadBotella(Integer.parseInt(partes[2]));
+				cerveza.setPrecio(Double.parseDouble(partes[3]));
+				cerveza.setStock(Integer.parseInt(partes[4]));
+				cerveza.setOrigen(partes[5]);
+				cerveza.setCereales(partes[6]);
+				cerveza.setGradosAlcohol(Double.parseDouble(partes[7]));
 
 				articulos.add(cerveza);
 
 			}
-			if (partes[0].equals("vino")) {
-				
-				 Vino vino = new Vino();
-				 vino.setCode(partes[1]);
-				 vino.setName(partes[2]);
-				 vino.setCapacidadBotella(Integer.parseInt(partes[3]));
-				 vino.setPrecio(Double.parseDouble(partes[4]));
-				 vino.setStock(Integer.parseInt(partes[5]));
-				 vino.setColor(partes[6]);
-				 vino.setOrigen(partes[7]);
-				 vino.setAnio(Integer.parseInt(partes[8]));
-				 vino.setTipoDeUva(partes[9]);
-				 vino.setGradosAlcohol(Double.parseDouble(partes[10]));
-				 
-				
+			if (partes[1].equals("vino")) {
+
+				Vino vino = new Vino();
+				vino.setCode(partes[0]);
+				vino.setName(partes[1]);
+				vino.setCapacidadBotella(Integer.parseInt(partes[2]));
+				vino.setPrecio(Double.parseDouble(partes[3]));
+				vino.setStock(Integer.parseInt(partes[4]));
+				vino.setColor(partes[5]);
+				vino.setOrigen(partes[6]);
+				vino.setAnio(Integer.parseInt(partes[7]));
+				vino.setTipoDeUva(partes[8]);
+				vino.setGradosAlcohol(Double.parseDouble(partes[9]));
+
 				articulos.add(vino);
 			}
-			if (partes[0].equals("refresco")) {
+			if (partes[1].equals("refresco")) {
 				Refresco refresco = new Refresco();
-				refresco.setCode(partes[1]);
-				refresco.setName(partes[2]);
-				refresco.setCapacidadBotella(Integer.parseInt(partes[3]));
-				refresco.setPrecio(Double.parseDouble(partes[4]));
-				refresco.setStock(Integer.parseInt(partes[5]));
-				refresco.setSabor(partes[6]);
-				refresco.setZumo(Boolean.parseBoolean(partes [7]));
-				refresco.setCantidadAzucar(Integer. parseInt (partes[8]));
-				
-			
+				refresco.setCode(partes[0]);
+				refresco.setName(partes[1]);
+				refresco.setCapacidadBotella(Integer.parseInt(partes[2]));
+				refresco.setPrecio(Double.parseDouble(partes[3]));
+				refresco.setStock(Integer.parseInt(partes[4]));
+				refresco.setSabor(partes[5]);
+				refresco.setZumo(Boolean.parseBoolean(partes[6]));
+				refresco.setCantidadAzucar(Integer.parseInt(partes[7]));
 
 				articulos.add(refresco);
 
@@ -71,37 +67,127 @@ public class Almacen {
 		}
 
 		lectorFichero.close();
-	
 
 	}
-	
-	public Articulo elMasCaro() {
+
+	public static void todos(ArrayList<Articulo> articulos) {
 		for (int i = 0; i < articulos.size(); i++) {
-			double total;
-			int posicion;
-			Articulo articulo ;
-			posicion=-1;
-			total=0;
-			/*
-			 * if(articulos.getPrecio()>total) {
-				total=articulos.getPrecio();
-				posicion=i;
-			}
-		for (int j = 0; j < articulos.size(); j++) {
-			if (posicion==j) {
-				articulo=articulos[j];
-			}
+			System.out.println(articulos.get(i));
 		}
-		 * 
-			 * 
-			 * 
-			 */
-		
-			return(articulo);
-			
-			
-		}
-		
 	}
 
+	public Articulo elMasCaro() {
+		double precio = 0;
+		Articulo articulo_caro = null;
+		for (Articulo articulo : articulos) {
+			if (articulo.getPrecio() > precio) {
+				precio = articulo.getPrecio();
+				articulo_caro = articulo;
+			}
+		}
+		return articulo_caro;
+
+	}
+
+	public double precio(String codigoProducto) {
+		double precio= 0;
+		for (Articulo articulo : articulos) {
+			if (articulo.getCode().equals(codigoProducto)) {
+				precio = articulo.getPrecio();
+			}
+		}
+		return precio;
+	}
+
+	public boolean hayStock(String codigoProducto) {
+		boolean stock= false;
+		for (Articulo articulo : articulos) {
+			if (articulo.getCode().equals(codigoProducto)) {
+				if (articulo.getStock() > 0) {
+					stock = true;
+				} else {
+					stock = false;
+				}
+			}
+		}
+		return stock;
+	}
+
+	public ArrayList<Articulo> stockJusto(ArrayList<Articulo> articulos) {
+		int i = 0;
+		ArrayList<Articulo> menor_10 = new ArrayList<Articulo>();
+		for (Articulo articulo : articulos) {
+			if (articulo.getStock() < 10) {
+				menor_10.add(articulos.get(i));
+			}
+		}
+		i = i + 1;
+		return menor_10;
+	}
+
+	public void articulo(String codigoProducto) {
+		int i = 0;
+		for (Articulo articulo : articulos) {
+			if (articulo.getCode().equals(codigoProducto)) {
+				System.out.println(articulos.get(i));
+			}
+		}
+		i = i + 1;
+	}
+
+	public boolean disponibilidad(int cantidad, String codigoProducto) {
+		boolean stock= false;
+		for (Articulo articulo : articulos) {
+			if (articulo.getCode().equals(codigoProducto)) {
+				if (articulo.getStock() > cantidad) {
+					stock = true;
+				} else {
+					stock = false;
+				}
+			}
+		}
+		return stock;
+	}
+	
+	public ArrayList<Articulo>  equivalente (Articulo articulo) {
+		double diferencia_1=0;
+		double diferencia_2=0;
+		ArrayList<Articulo> equivalentes = new ArrayList<Articulo>();
+		for (Articulo articulo_equivalente : articulos) {
+			if (articulo.getName().equals(articulo_equivalente.getName())) {
+				diferencia_1=articulo.getPrecio() - articulo_equivalente.getPrecio();
+				diferencia_2=articulo_equivalente.getPrecio() - articulo.getPrecio() ;
+				if((diferencia_1==0.2) || ( diferencia_2==0.2)) {
+					equivalentes.add(articulo);
+					equivalentes.add(articulo_equivalente);
+					
+				}
+			}
+		}
+		return equivalentes;
+	}
+  
+  public ArrayList<Articulo> ordenarPorPrecio(String orden){
+	double precio_Mbajo=0;
+	int i = 0;
+	Articulo auxiliar=null;
+	ArrayList<Articulo> ordenado = new ArrayList <Articulo>();
+	
+	 if (orden=="ACS") { //menor a mayor
+		 for (Articulo articulo : articulos) {
+			 if (precio_Mbajo<articulo.getPrecio()) {
+				 auxiliar=articulo;
+			 }
+		 
+		 
+		
+		 	
+	 }
+	 
+	 if(orden=="DESC") { // mayor a menor
+		 
+	 }
+  }
+
+}
 }

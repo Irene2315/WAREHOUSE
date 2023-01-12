@@ -104,5 +104,6 @@ public class Vino extends Articulo implements Alcoholico {
 		}
 		return total;
 	}
+	
 
 }
