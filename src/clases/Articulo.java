@@ -86,7 +86,7 @@ public abstract  class  Articulo  {
 	public static void disminuirStock(int cantidad) {
 		int total;
 		total = 0;
-		total = total - cantidad;
+		total = cantidad -1;
 		System.out.println("El stock actual es de " + total + " unidades");
 	}
 

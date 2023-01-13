@@ -194,8 +194,8 @@ public class Almacen {
 				}
 
 			}
-			// ordenado=articulos.sort(menorMayorP.compare(articulos,new menorMayorP()));
-			// Collections.sort(articulos,new menorMayorP());
+			 //ordenado=articulos.sort(menorMayorP.compare(articulos,new menorMayorP()));
+			//Collections.sort(articulos,new menorMayorP());
 		}
 
 		if (orden == "DESC") { // mayor a menor
