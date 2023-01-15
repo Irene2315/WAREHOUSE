@@ -86,11 +86,11 @@ public abstract  class  Articulo  {
 	}
 
 	// el odjeto artículo es necesarío para actualizar el almacén
-	public static void disminuirStock(Articulo articulo_c,int cantidad) {
+	public static void disminuirStock(Articulo articulo_v,int cantidad) {
 		int total;
 		total = 0;
-		total = articulo_c.getStock()-cantidad;
-		articulo_c.setStock(total);
+		total = articulo_v.getStock() -cantidad;
+		articulo_v.setStock(total);
 		System.out.println("El stock actual es de " + total + " unidades");
 	}
 
