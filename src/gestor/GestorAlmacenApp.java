@@ -105,7 +105,7 @@ public class GestorAlmacenApp {
 
 				// mostraremos en pantalla nuestra factura
 				factura.mostrarEnPantalla();
-
+				
 				break;
 				
 			case REALIZAR_COMPRA:
@@ -133,15 +133,27 @@ public class GestorAlmacenApp {
 				break;
 
 			case VER_ARTICULOS_SALUDABLES:
-				System.out.println("Tercera opcion selecinada ");
+				for (Articulo articulo : articulos) {
+					if(articulo.saludable()==true) {
+						//no coge refresco
+						articulo.visualizarArticulo();
+					}
+				}
 				break;
 			case VER_ARTICULO_MAS_CARO:
 				Articulo articulo_caro = null;
 				articulo_caro = Almacen.elMasCaro();
-				// Articulo.visualizarArticulo();
+			    articulo_caro.visualizarArticulo();
 				break;
 			case VER_ARTICULOS_CON_MENOS_STOCK_X:
-				System.out.println("Cuarta opcion selecinada ");
+				int stock_x;
+				System.out.println("Introduce la fraja de stock mínimo que quieres vilualizar ");
+				stock_x=teclado.nextInt();
+				for (Articulo articulo : articulos) {
+					if(articulo.getStock()<stock_x) {
+						articulo.visualizarArticulo();
+					}
+				}
 				break;
 
 			case SALIR:

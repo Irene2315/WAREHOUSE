@@ -98,8 +98,8 @@ public abstract  class  Articulo  {
 	
 	
 	public String toString() {
-		return  "Code: " + this.code +  "Name: " + this.name + "Marca:" +this.mark +"CapacidadBotella: " + this.capacidadBotella + 
-				" Precio="+ this.precio + "Stock: " + this.stock;
+		return  "Codigo: " + this.code +  " Nombre: " + this.name + " Marca: " +this.mark +" CapacidadBotella: " + this.capacidadBotella + 
+				" Precio: "+ this.precio + " Stock: " + this.stock;
 	}
 	public String paraFichero() {
 		return this.code+ ":" +this.name +":" +this.mark+":"+this.capacidadBotella+":"+this.precio+":"+this.stock+ ":";

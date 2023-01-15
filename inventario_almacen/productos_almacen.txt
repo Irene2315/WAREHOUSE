@@ -4,6 +4,6 @@
 1001:vino:bodega_marqués:750:6.9:300:tinto:la_rioja:2010:garnacha:15.0
 1002:vino:bodega_piedra:750:3.3:150:rosado:navarra:2019:graciano:11.0
 1003:vino:bodega_montecillo:750:8.9:200:blanco:navarra:2008:merlot:14.0
-2001:refresco:cocacola:33:1.5:300:naranja:true:false:33
+2001:refresco:cocacola:33:1.5:300:naranja:true:false:12
 2002:refresco:cocacola:33:2.5:150:limon:true:true:55
 2003:refresco:greip:35:2.3:300:manzana:true:false:10

@@ -43,7 +43,7 @@ public class Cerveza extends Articulo implements Alcoholico {
 	}
 
 	public void visualizarArticulo() {
-		System.out.println(super.toString() + "Origen=" + this.origen + " Cereales: " + this.cereales
+		System.out.println(super.toString() + " Origen: " + this.origen + " Cereales: " + this.cereales
 				+ " GradosAlcohol: " + this.gradosAlcohol);
 	}
 public String paraFichero() {

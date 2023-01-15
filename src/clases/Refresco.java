@@ -52,7 +52,7 @@ public class Refresco extends Articulo {
 
 	public void visualizarPropiedades() {
 
-		System.out.print(" Sabor: " + this.sabor + " Zumo: " + this.zumo + "Gaseoso: " +this.gaseoso+ " Cantidad azucar" + this.cantidadAzucar);
+		System.out.print(" Sabor: " + this.sabor + " Zumo: " + this.zumo + " Gaseoso: " +this.gaseoso+ " CantidadAzucar: " + this.cantidadAzucar);
 	}
 
 	public void visualizarArticulo() {
@@ -65,9 +65,10 @@ public class Refresco extends Articulo {
 	}
 
 	public boolean saludable() {
-		if (cantidadAzucar < 20) {
+		if (cantidadAzucar<20) {
 			return true;
-		} else {
+		}
+		else {
 			return false;
 		}
 	}
