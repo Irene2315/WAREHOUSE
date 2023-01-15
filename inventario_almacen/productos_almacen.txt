@@ -1,9 +1,9 @@
-0001:cerveza:heineken:33:1.50:9:granada:cebada:6.0
-0002:cervaza:corona:33:1.70:300:teruel:lupulo:8.0
-0003:cerveza:guinness:33:2.50:200:US:lupulo:7.0
-1001:vino:bodega_marqués:750:6.90:3:tinto:la_rioja:2010:garnacha:15.0
-1002:vino:bodega_piedra:750:3.30:150:rosado:navarra:2019:graciano:11.0
-1003:vino:bodega_montecillo:750:8.90:200:blanco:navarra:2008:merlot:14.0
+0001:cerveza:heineken:33:1.5:220:granada:cebada:6.0
+0002:cerveza:corona:33:1.7:300:teruel:lupulo:8.0
+0003:cerveza:guinness:33:2.5:200:US:lupulo:7.0
+1001:vino:bodega_marqués:750:6.9:300:tinto:la_rioja:2010:garnacha:15.0
+1002:vino:bodega_piedra:750:3.3:150:rosado:navarra:2019:graciano:11.0
+1003:vino:bodega_montecillo:750:8.9:200:blanco:navarra:2008:merlot:14.0
 2001:refresco:cocacola:33:1.5:300:naranja:true:false:33
 2002:refresco:cocacola:33:2.5:150:limon:true:true:55
-2003:refesco:greip:35:2.3:300:manzana:true:false:10
+2003:refresco:greip:35:2.3:300:manzana:true:false:10

@@ -8,10 +8,13 @@ import java.util.Comparator;
 import java.util.Scanner;
 
 public class Almacen {
+	
 	static ArrayList<Articulo> articulos = new ArrayList<Articulo>();
-	static File file = new File("inventario_almacen/productos_almacen.txt");
 
-	public static void cargarDatos() throws FileNotFoundException {
+	public static ArrayList<Articulo>  cargarDatos(String Nombre_fichero) throws FileNotFoundException  {
+	
+		File file = new File(Nombre_fichero);
+		
 		Scanner lectorFichero = new Scanner(file);
 		String linea;
 		String[] partes;
@@ -73,6 +76,7 @@ public class Almacen {
 		}
 
 		lectorFichero.close();
+		return articulos;
 
 	}
 
@@ -210,9 +214,11 @@ public class Almacen {
 					} else {
 						return 0;
 					}
+					
 
 				}
 			}
+			
 			// ordenado=articulos.sort(mayorMenorP.compare(articulos,new menorMayorP()));
 			// Collections.sort(articulos,new menorMayorP());
 
@@ -264,13 +270,16 @@ public class Almacen {
 	  }
 	  return ordenado;
 	}
-	public static void guardar() throws FileNotFoundException {
+	public static void guardar(String Nombre_fichero,ArrayList <Articulo> articulos) throws FileNotFoundException {
 		
 		
-		PrintWriter writer = new PrintWriter("inventario_almacen/productos_almacen.txt");
-		for (int j = 0; j < articulos.size(); j++) {
-			//writer.println(articulos[j].paraFichero());
+		PrintWriter writer = new PrintWriter(Nombre_fichero);
+		for (int i = 0; i < articulos.size(); i++) {
+			writer.println(articulos.get(i).paraFichero());
 		}
+			
+		
+		
 		System.out.println("Los nuevos cambios han sido guardados con exito!!");
 		writer.close();
 

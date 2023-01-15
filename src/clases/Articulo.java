@@ -76,17 +76,21 @@ public abstract  class  Articulo  {
 
 	
 
-	public static void incrementarStock(int cantidad) {
+	//el odjeto articulo es necesarío para actuliazar el almacen.
+	public static void incrementarStock(Articulo articulo_c, int cantidad) {
 		int total;
 		total = 0;
-		total = 1 + cantidad;
+		total = articulo_c.getStock() +cantidad;
+		articulo_c.setStock(total);
 		System.out.println("El stock actual es de " + total + " unidades");
 	}
 
-	public static void disminuirStock(int cantidad) {
+	// el odjeto artículo es necesarío para actualizar el almacén
+	public static void disminuirStock(Articulo articulo_c,int cantidad) {
 		int total;
 		total = 0;
-		total = cantidad -1;
+		total = articulo_c.getStock()-cantidad;
+		articulo_c.setStock(total);
 		System.out.println("El stock actual es de " + total + " unidades");
 	}
 
@@ -98,7 +102,7 @@ public abstract  class  Articulo  {
 				" Precio="+ this.precio + "Stock: " + this.stock;
 	}
 	public String paraFichero() {
-		return this.code+ ":" +this.name +":" +this.mark+":"+this.precio+":"+this.stock;
+		return this.code+ ":" +this.name +":" +this.mark+":"+this.capacidadBotella+":"+this.precio+":"+this.stock+ ":";
 	}
 	public abstract boolean saludable();
 
@@ -120,5 +124,7 @@ public abstract  class  Articulo  {
 		return estado;
 			
 	}
+
+	
 
 }
