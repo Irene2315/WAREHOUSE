@@ -57,7 +57,7 @@ public class LineaFactura{
 	}
 	
     public String formatoFichero() {
-    	return this.numero +":" +this.articulo + ":" + this.articulo +":" + this.cantidad;
+    	return this.numero +":" +this.articulo +":" + this.cantidad;
     }
 	
 }
