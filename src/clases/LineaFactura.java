@@ -3,9 +3,9 @@ package clases;
 public class LineaFactura{
 	private int numero;
 	private Articulo articulo;
-	private double cantidad;
+	private int cantidad;
 	
-	public LineaFactura(int numero, Articulo articulo, double cantidad) {
+	public LineaFactura(int numero, Articulo articulo, int cantidad) {
 		super();
 		this.numero = numero;
 		this.articulo = articulo;
@@ -36,7 +36,7 @@ public class LineaFactura{
 		return cantidad;
 	}
 
-	public void setCantidad(double cantidad) {
+	public void setCantidad(int cantidad) {
 		this.cantidad = cantidad;
 	}
 	
@@ -51,7 +51,7 @@ public class LineaFactura{
     public void mostrarEnPantalla() {
 		System.out.println(
 				this.numero+ "\t" + 
-		        this.articulo +"\t"+
+		        this.articulo.getCode()+"\t"+ this.articulo.getName()+"\t" +this.articulo.getMark()+"\t"+this.articulo.getPrecio() +"\t"+
 				this.cantidad + "\t" +
 				this.precioTotal());
 	}

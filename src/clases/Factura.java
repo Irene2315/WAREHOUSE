@@ -105,14 +105,14 @@ public void mostrarEnPantalla() {
 	System.out.println("Fecha: " + formatoFechaString(this.fecha));
 	System.out.println(this.concepto);
 	
-	System.out.println("num\tart.\tprecio\tcant.\ttotal");
-	System.out.println("---\t----\t------\t-----\t-----");
-	for (int i = 0; i < lineasFacturas.size(); i++) {
-		LineaFactura lineaFactura = new LineaFactura();
+	System.out.println("num\tart\t\t\t\tcant.\ttotal");
+	System.out.println("---\t------------------------------\t------\t-----\t-----");
+	System.out.println("----\tcodigo\tnombre\tmarca\tprecio");
+	for (LineaFactura lineaFactura : lineasFacturas) {
 		lineaFactura.mostrarEnPantalla();
-	}
+	} 
 	
-	System.out.println("\t\t\t---Total: " + this.precioTotal());
+	System.out.println("\t\t\t\t\t\tTotal: " + this.precioTotal());
 	
 	
 }
@@ -132,7 +132,7 @@ public void guardarEnFichero() throws FileNotFoundException {
 }
 
 public String nombreFichero() {
-	String nombreDelFichero = getNumero() + "_" + getFecha() + "_factura.txt";
+	String nombreDelFichero = getNumero() + "_" + formatoFechaString(getFecha()) + "_factura" +".txt";
 	
 	return nombreDelFichero;
 }
