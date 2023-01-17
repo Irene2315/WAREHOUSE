@@ -1,6 +1,6 @@
 package clases;
 
-public class LineaFactura extends Factura {
+public class LineaFactura{
 	private int numero;
 	private Articulo articulo;
 	private double cantidad;

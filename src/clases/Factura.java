@@ -17,6 +17,7 @@ public class Factura {
 	private String nombreEmpresa;
 	private Date fecha;
 	private String concepto;
+	
 	private ArrayList<LineaFactura> lineasFacturas=new ArrayList<LineaFactura>();
 	
 	

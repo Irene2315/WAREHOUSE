@@ -27,8 +27,8 @@ public class GestorAlmacenApp {
 		do {
 			System.out.println("------MENU-------");
 			System.out.println("¿Qué desea realizar?");
-			System.out.println(REALIZAR_VENTA + ". Comprar artículo");
-			System.out.println(REALIZAR_COMPRA + ". Vender artículo");
+			System.out.println(REALIZAR_VENTA + ". vender articulos");
+			System.out.println(REALIZAR_COMPRA + ". comprar artículos");
 			System.out.println(VER_ARTICULOS_SALUDABLES + ". Ver artículos saludable");
 			System.out.println(VER_ARTICULO_MAS_CARO + ". Ver artículo más caro ");
 			System.out.println(VER_ARTICULOS_CON_MENOS_STOCK_X + ". Ver artículos con menos Stock que x");
