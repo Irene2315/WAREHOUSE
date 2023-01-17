@@ -119,6 +119,13 @@ public void mostrarEnPantalla() {
 public void guardarEnFichero() throws FileNotFoundException {
 	
 	PrintWriter writer = new PrintWriter("facturas/" +nombreFichero());
+	writer.println(this.numero + ":" +this.nombreEmpresa + ":" +formatoFechaString(this.fecha)+ ":" + this.concepto);
+	writer.println();
+	
+	for (int i = 0; i < lineasFacturas.size(); i++) {
+		writer.println(lineasFacturas.get(i).formatoFichero());
+	}
+	System.out.println("Los nuevos cambios han sido guardados con exito!!");
 	
 	writer.close();
 }

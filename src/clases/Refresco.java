@@ -52,11 +52,11 @@ public class Refresco extends Articulo {
 
 	public void visualizarPropiedades() {
 
-		System.out.print(" Sabor: " + this.sabor + " Zumo: " + this.zumo + " Gaseoso: " +this.gaseoso+ " CantidadAzucar: " + this.cantidadAzucar);
+		System.out.println(" Sabor: " + this.sabor + " Zumo: " + this.zumo + " Gaseoso: " +this.gaseoso+ " CantidadAzucar: " + this.cantidadAzucar);
 	}
 
 	public void visualizarArticulo() {
-		System.out.print(super.toString() + " Sabor: " + this.sabor + " Zumo: " + this.zumo + " Cantidad azucar"
+		System.out.println(super.toString() + " Sabor: " + this.sabor + " Zumo: " + this.zumo + " Cantidad azucar"
 				+ this.cantidadAzucar);
 	}
 	public String paraFichero() {

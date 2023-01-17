@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Scanner;
 
-public class Almacen {
+public class Almacen  {
 	
 	static ArrayList<Articulo> articulos = new ArrayList<Articulo>();
 
@@ -186,42 +186,33 @@ public class Almacen {
 			class menorMayorP implements Comparator<Articulo> {
 
 				public int compare(Articulo a1, Articulo a2) {
-					if (a1.getPrecio() > a2.getPrecio()) {
-						return 1;
-					} else if (a1.getPrecio() < a2.getPrecio()) {
-
-						return -1;
-					} else {
-						return 0;
-					}
+					//min a maximo
+					return (int) (a1.getPrecio() - a2.getPrecio());
 
 				}
 
 			}
-			 //ordenado=articulos.sort(menorMayorP.compare(articulos,new menorMayorP()));
-			//Collections.sort(articulos,new menorMayorP());
+			menorMayorP comparador= new menorMayorP();
+		    articulos.sort(comparador);
+			
 		}
 
 		if (orden == "DESC") { // mayor a menor
-
 			class mayorMenorP implements Comparator<Articulo> {
-				public int compare(Articulo a1, Articulo a2) {
-					if (a1.getPrecio() > a2.getPrecio()) {
-						return -1;
-					} else if (a1.getPrecio() < a2.getPrecio()) {
 
-						return 1;
-					} else {
-						return 0;
-					}
-					
+				public int compare(Articulo a1, Articulo a2) {
+					//min a maximo
+					return (int) (a2.getPrecio()-a1.getPrecio());
 
 				}
-			}
-			
-			// ordenado=articulos.sort(mayorMenorP.compare(articulos,new menorMayorP()));
-			// Collections.sort(articulos,new menorMayorP());
 
+			}
+			mayorMenorP comparador= new mayorMenorP();
+		    articulos.sort(comparador);
+			
+			
+			
+			
 		}
 		return ordenado;
 	}
@@ -233,39 +224,30 @@ public class Almacen {
 			class menorMayorS implements Comparator<Articulo> {
 
 				public int compare(Articulo a1, Articulo a2) {
-					if (a1.getStock() > a2.getStock()) {
-						return 1;
-					} else if (a1.getStock() < a2.getStock()) {
-
-						return -1;
-					} else {
-						return 0;
-					}
+					//min a maximo
+					return a1.getStock() - a2.getStock();
 
 				}
 
 			}
-			// ordenado=articulos.sort(menorMayorS.compare(articulos,new menorMayorP()));
-			//Collections.sort(articulos,new menorMayorS());
+			menorMayorS comparador= new menorMayorS();
+		    articulos.sort(comparador);
+			
+			
 		}
 	  if (orden == "DESC") {
 		  
 		  class mayorMenorS implements Comparator <Articulo>{
 			  public int compare(Articulo a1, Articulo a2) {
-					if (a1.getStock() > a2.getStock()) {
-						return -1;
-					} else if (a1.getStock() < a2.getStock()) {
-
-						return 1;
-					} else {
-						return 0;
-					}
+				  //maximo minimo
+					return a2.getStock()- a1.getStock();
 
 				}
 
 		  }
-		// ordenado=articulos.sort(menorMayorS.compare(articulos,new menorMayorP()));
-		// Collections.sort(articulos,new menorMayorS());
+		  mayorMenorS comparador= new mayorMenorS();
+		    articulos.sort(comparador);
+		
 		  
 	  }
 	  return ordenado;
@@ -284,5 +266,9 @@ public class Almacen {
 		writer.close();
 
 	}
+
+
+
+	
 
 }

@@ -52,10 +52,12 @@ public class LineaFactura extends Factura {
 		System.out.println(
 				this.numero+ "\t" + 
 		        this.articulo +"\t"+
-				//this.articulo.getName()+ "\t"+ this.articulo.getPrecio()+ "\t"+
 				this.cantidad + "\t" +
 				this.precioTotal());
 	}
 	
+    public String formatoFichero() {
+    	return this.numero +":" +this.articulo + ":" + this.articulo +":" + this.cantidad;
+    }
 	
 }

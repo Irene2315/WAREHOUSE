@@ -58,34 +58,7 @@ public class GestorAlmacenApp {
 				String String_fecha_factura;
 				String concepto_factura;
 
-				System.out.println(
-						"Introduzca el codigo de articulo que desea vender, si ha terminado su compra escriba salir");
-				teclado.nextLine();
-				articulo_codigo_c = teclado.nextLine();
-
-				while (!articulo_codigo_c.toLowerCase().equals("salir")) {
-
-					numero_linea = numero_linea + 1;
-					// actualizador
-					System.out.println("introduce la cantidad de ese articulo que quieres vender");
-					cantidad_1 = teclado.nextInt();
-					articulo_c = Almacen.articulo(articulo_codigo_c);
-					Articulo.disminuirStock(articulo_c, cantidad_1);
-					Almacen.guardar(Nombre_Fichero, articulos);
-
-					// añadir linea
-					lineaFactura.setNumero(numero_linea);
-					lineaFactura.setArticulo(articulo_c);
-					lineaFactura.setCantidad(cantidad_1);
-					factura.addLinea(lineaFactura);
-
-					System.out.println(
-							"Introduzca el codigo de articulo que desea vender, si ha terminado su compra escriba salir");
-					teclado.nextLine();
-					articulo_codigo_c = teclado.nextLine();
-				}
-
-				// datos de la factura
+				// introducir factura
 				System.out.println("---Introduzca los datos de factura---");
 				System.out.println("Introduce el numero");
 				numero_factura = teclado.nextInt();
@@ -102,9 +75,45 @@ public class GestorAlmacenApp {
 				factura.setNombreEmpresa(nombreEmpresa_factura);
 				factura.setFecha(Factura.formatoFechaDate(String_fecha_factura));
 				factura.setConcepto(concepto_factura);
+				
+				//introducir producto
+				System.out.println("Introduzca el codigo de articulo que desea vender, si ha terminado su compra escriba salir");
+				
+				articulo_codigo_c = teclado.nextLine();
+				
+
+
+				while (!articulo_codigo_c.toLowerCase().equals("salir")) {
+
+					numero_linea = numero_linea + 1;
+					// actualizador
+					System.out.println("introduce la cantidad de ese articulo que quieres vender");
+					cantidad_1 = teclado.nextInt();
+					
+					articulo_c = Almacen.articulo(articulo_codigo_c);
+					Articulo.disminuirStock(articulo_c, cantidad_1);
+					Almacen.guardar(Nombre_Fichero, articulos);
+
+					// añadir linea
+					lineaFactura.setNumero(numero_linea);
+					lineaFactura.setArticulo(articulo_c);
+					lineaFactura.setCantidad(cantidad_1);
+					factura.addLinea(lineaFactura);
+
+					System.out.println(
+							"Introduzca el codigo de articulo que desea vender, si ha terminado su compra escriba salir");
+					teclado.nextLine();
+					articulo_codigo_c = teclado.nextLine();
+					
+
+				}
+
+				
 
 				// mostraremos en pantalla nuestra factura
+				//fallo al mostrar en pantalla
 				factura.mostrarEnPantalla();
+				factura.guardarEnFichero();
 				
 				break;
 				
@@ -116,6 +125,8 @@ public class GestorAlmacenApp {
 						"Introduzca el codigo de articulo que desea comprar, si ha terminado su compra escriba salir");
 				teclado.nextLine();
 				articulo_codigo_v = teclado.nextLine();
+				
+				
 
 				while (!articulo_codigo_v.toLowerCase().equals("salir")) {
 					// actualizador stock
@@ -128,6 +139,8 @@ public class GestorAlmacenApp {
 							"Introduzca el codigo de articulo que desea comprar, si ha terminado su compra escriba salir");
 					teclado.nextLine();
 					articulo_codigo_v = teclado.nextLine();
+					
+					
 				}
 
 				break;
@@ -140,14 +153,16 @@ public class GestorAlmacenApp {
 					}
 				}
 				break;
+				
 			case VER_ARTICULO_MAS_CARO:
 				Articulo articulo_caro = null;
 				articulo_caro = Almacen.elMasCaro();
 			    articulo_caro.visualizarArticulo();
 				break;
+				
 			case VER_ARTICULOS_CON_MENOS_STOCK_X:
 				int stock_x;
-				System.out.println("Introduce la fraja de stock mínimo que quieres vilualizar ");
+				System.out.println("Introduce la fraja de stock mínimo que quieres visualizar ");
 				stock_x=teclado.nextInt();
 				for (Articulo articulo : articulos) {
 					if(articulo.getStock()<stock_x) {
