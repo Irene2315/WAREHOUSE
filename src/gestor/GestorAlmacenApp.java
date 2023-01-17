@@ -121,6 +121,7 @@ public class GestorAlmacenApp {
 				String articulo_codigo_v;
 				Articulo articulo_v = null;
 				int cantidad_2;
+				do {
 				System.out.println(
 						"Introduzca el codigo de articulo que desea comprar, si ha terminado su compra escriba salir");
 				teclado.nextLine();
@@ -128,20 +129,16 @@ public class GestorAlmacenApp {
 				
 				
 
-				while (!articulo_codigo_v.toLowerCase().equals("salir")) {
+				}while (!articulo_codigo_v.toLowerCase().equals("salir"));
 					// actualizador stock
 					System.out.println("introduce la cantidad de ese articulo que quieres comprar");
 					cantidad_2 = teclado.nextInt();
 					articulo_v = Almacen.articulo(articulo_codigo_v);
 					Articulo.incrementarStock(articulo_v, cantidad_2);
 					Almacen.guardar(Nombre_Fichero, articulos);
-					System.out.println(
-							"Introduzca el codigo de articulo que desea comprar, si ha terminado su compra escriba salir");
-					teclado.nextLine();
-					articulo_codigo_v = teclado.nextLine();
 					
 					
-				}
+					
 
 				break;
 

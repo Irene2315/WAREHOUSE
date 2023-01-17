@@ -1,5 +1,5 @@
-0001:cerveza:heineken:33:1.5:300:granada:cebada:6.0
-0002:cerveza:corona:33:1.7:300:teruel:lupulo:8.0
+0001:cerveza:heineken:33:1.5:296:granada:cebada:6.0
+0002:cerveza:corona:33:1.7:295:teruel:lupulo:8.0
 0003:cerveza:guinness:33:2.5:200:US:lupulo:7.0
 1001:vino:bodega_marqués:750:6.9:300:tinto:la_rioja:2010:garnacha:15.0
 1002:vino:bodega_piedra:750:3.3:150:rosado:navarra:2019:graciano:11.0

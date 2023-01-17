@@ -112,7 +112,7 @@ public void mostrarEnPantalla() {
 		lineaFactura.mostrarEnPantalla();
 	} 
 	
-	System.out.println("\t\t\t\t\t\tTotal: " + this.precioTotal());
+	System.out.println("\t\t\t\t\t\t   Total: " + this.precioTotal());
 	
 	
 }
